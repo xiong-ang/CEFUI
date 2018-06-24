@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="web前端手风琴">
+<meta name="description" content="手风琴特效">
+<title>手风琴特效</title>
+<script src="jQ/jquery-3.2.1.js"></script>
+
+ <style>
+   *{/*清除默认外边距*/
+        margin:0;
+	}
+	li{
+		list-style:none;
+	}
+   html,body{
+	   height:100%;
+   }
+   body{
+	   position:relative;
+   }
+   .bg-box{
+	   
+	   position: absolute;
+	   
+	   width:100%;
+	   height:100%;
+	   
+	   
+	   }
+	.bg-box img{
+		display:block;
+		width:100%;
+		height:100%;
+	}
+	#wrap {
+		position:absolute;
+		top:0px;
+		left:0px;
+		right:0px;
+		bottom:0px;
+		margin:auto;
+		width:1100px;
+		height:400px;
+		border: solid 3px #222;
+	}
+	#wrap ul{
+		width:120%;
+		margin:0px;
+		padding:0px;
+	}
+	#wrap ul li{
+		float:left;
+		width:100px;
+		height:400px;
+		background: url(images/1.jpg);
+		
+	}
+	#wrap ul li div{
+		width:100px;
+		height:400px;
+		background:rgba(0,0,0,.5);
+	}
+	#wrap ul li div p{
+		padding:40px 40px;
+		color:#fff;
+		
+	}
+	#wrap ul li:nth-child(2){
+		
+		background: url(images/2.jpg);
+		
+	}
+	#wrap ul li:nth-child(3){
+		
+		background: url(images/3.jpg);
+		
+	}
+	#wrap ul li:nth-child(4){
+		width:800px;
+		background: url(images/4.jpg);
+		
+	}
+   
+
+ </style>
+</head>
+
+<body>
+  <div class="bg-box">
+   <img src="images/1.jpg" width="800" height="400" alt="test">
+  </div>
+  <div class="bg-box">
+   <img src="images/2.jpg" width="800" height="400" alt="test">
+  </div>
+  <div class="bg-box">
+   <img src="images/3.jpg" width="800" height="400" alt="test">
+  </div>
+  <div class="bg-box">
+   <img src="images/4.jpg" width="800" height="400" alt="test">
+  </div>
+  <div id="wrap">
+    <ul>
+      <li><div><p>这是第一张图片</p></div></li>
+      <li><div><p>这是第二张图片</p></div></li>
+      <li><div><p>这是第三张图片</p></div></li>
+      <li><div><p>这是第四张图片</p></div></li>
+    
+    </ul>
+  </div>
+  
+  <script>
+     
+     var $li=$("#wrap ul li");
+	 var $bg=$('.bg-box ');
+	 $li.hover(function(){
+		  var $_index=$(this).index();
+		$bg.eq($_index).fadeIn().siblings('.bg-box').css("display","none");
+		 $(this).stop().animate({
+			 width:'800px'
+		 },500).siblings('li').stop().animate({width:'100px'},500);
+		
+	 })
+  
+  </script>
+
+</body>
+</html>
