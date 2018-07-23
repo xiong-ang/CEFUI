@@ -1,4 +1,7 @@
-# CefUI    
+# CefUI        
+
+[![Build Status](https://travis-ci.org/xiong-ang/CEFUI.svg?branch=master)](https://travis-ci.org/xiong-ang/CEFUI)
+
 > A desktop application with front-end ui.          
 
 ## Propose   
