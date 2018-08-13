@@ -22,7 +22,7 @@ namespace CefServer
             //CefBrowser.Address = baseAddress + "/ui";
 
             //Set Cef Address
-            CefBrowser.Address = App.Url + "\\ui";
+            CefBrowser.Address = App.Url;
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
