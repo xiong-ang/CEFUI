@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Threading;
 using System.Windows;
-using System.Net.NetworkInformation;
-using System.Linq;
 
 namespace CefServer
 {
@@ -11,11 +9,8 @@ namespace CefServer
     /// </summary>
     public partial class App : Application
     {
-        //Default URL Port for App
-        internal static int Port = 60256;
-
         //URL
-        internal static string Url = "http://localhost:" + Port;
+        internal static string Url = "http://localhost:" + WebHelper.AppPort;
 
         //Mutex for App
         private static Mutex _mutex;
@@ -49,20 +44,10 @@ namespace CefServer
             base.OnStartup(e);
         }
 
-        //Check if url port is free to use, or find next free one
+        //Check Port Range
         private static bool CheckPort()
         {
-            var ipGlobalProperties = IPGlobalProperties.GetIPGlobalProperties();
-            var tcpConnectInfoArray = ipGlobalProperties.GetActiveTcpConnections();
-
-
-            while (tcpConnectInfoArray.Any(tcpi => tcpi.LocalEndPoint.Port == Port))
-            {
-                Port++;
-                if (Port >= 64000)
-                    return false;
-            }
-            return true;
+            return WebHelper.AppPort < 60000;
         }
 
         protected override void OnExit(ExitEventArgs e)

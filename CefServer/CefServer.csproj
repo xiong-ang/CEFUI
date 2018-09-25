@@ -133,6 +133,7 @@
     <Compile Include="Operations\IOperation.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Controllers\UIController.cs" />
+    <Compile Include="WebHelper.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
