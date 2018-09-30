@@ -9,11 +9,13 @@
     + Use Owin to host and serve Web API[Done]
     + Provide SplashScreen[Done]
     + Provide Extentable Port[Done]
-	+ Front-end to Back-end Ajax[Pending]
-	+ Back-end to Front-end SignalR[Pending]
+    -------------------------------InfoPlatform-------------------------------------------
+    + Front-end to Back-end Ajax[Pending]
+    + Back-end to Front-end SignalR[Pending]
     + Use Web API to provide static API and other handle requestes[Pending]
     + Design Back-end Interface to process Front-end handle requestes[Pending]
     + Design Front-end Library to request Back-end operation[Pending]
+    -------------------------------Angular--------------------------------------------
     + User WebPack to build Front-end UI[Pending]
     + User Angular to Design UI[Pending]
     + Demo UI-Router[Pending]
